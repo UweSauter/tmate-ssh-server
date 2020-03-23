@@ -409,6 +409,7 @@ static ssh_bind prepare_ssh(const char *keys_dir, const char *bind_addr, int por
 	ssh_bind_options_set(bind, SSH_BIND_OPTIONS_BINDPORT, &port);
 	ssh_bind_options_set(bind, SSH_BIND_OPTIONS_BANNER, TMATE_SSH_BANNER);
 	ssh_bind_options_set(bind, SSH_BIND_OPTIONS_LOG_VERBOSITY, &ssh_log_level);
+	ssh_bind_options_set(bind, SSH_BIND_OPTIONS_PROCESS_CONFIG, false);
 
 	ssh_import_key(bind, keys_dir, "ssh_host_rsa_key");
 	ssh_import_key(bind, keys_dir, "ssh_host_ed25519_key");
